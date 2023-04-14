@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Card from './components/Card.vue';
-import Button from './components/Button.vue';
+import Card from 'src/components/Card.vue';
+import Button from 'src/components/Button.vue';
 </script>
 <template>
     <Card title="Hello"></Card>
