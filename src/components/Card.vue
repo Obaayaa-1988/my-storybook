@@ -1,57 +1,29 @@
-
 <template>
-    <div id="card" @click="onClick" v-bind:aria-disabled="disabled" :style="style">
-        {{ title }}
-    </div>
+  <div class="card">
+    <h4 class="title">{{ title }}</h4>
+    <p class="secondary">{{ subText }}</p>
+
+  </div>
 </template>
 
-<script lang="ts">
-//  import  Button  from './Button.vue'
-import { reactive, computed } from 'vue';
+<script>
 export default {
-    name: 'card',
-    props: {
-        title: {
-            type: String,
-            default: 'Button',
-            required: true,
-        },
-        disabled: {
-            type: Boolean,
-            default: false,
-        },
-        rounded: {
-            type: Boolean,
-            default: false,
-        },
-        backgroundColor: {
-            type: String,
-            default: '#efcccf',
-        },
-    },
-    emits: ['click'],
-    setup(props: any, { emit }: any) {
-        props = reactive(props);
-        return {
-            style: computed(() => ({
-                backgroundColor: props.backgroundColor,
-                borderRadius: props.rounded ? '3em' : '0px',
-            })),
-            onClick() {
-                emit('clicked');
-            }
-        }
-    },
-};
-</script>
-<style scoped>
-#card {
-    font-family: Helvetica, Arial, sans-serif;
-    border: 0;
-    text-align: left;
-    padding: 15px;
-    width: 200px;
-    height: 100px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    name:'Card',
+    props:{
+        title: String,
+        subText: String
+    }
+
 }
+</script>
+
+<style scoped>
+.card{
+    background-color: #fff;
+    border-radius: .2rem;
+    box-shadow: rgb(150, 150, 150) 0px 1px 3px;
+    width: 350px;
+    padding: .8rem;
+}
+
 </style>
