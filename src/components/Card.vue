@@ -1,11 +1,12 @@
 
-
 <template>
-    <div class="card" @click="onClick" :disabled="disabled" :style="style">
+    <div id="card" @click="onClick" v-bind:aria-disabled="disabled" :style="style">
         {{ title }}
     </div>
 </template>
+
 <script lang="ts">
+//  import  Button  from './Button.vue'
 import { reactive, computed } from 'vue';
 export default {
     name: 'card',
@@ -44,7 +45,7 @@ export default {
 };
 </script>
 <style scoped>
-.card {
+#card {
     font-family: Helvetica, Arial, sans-serif;
     border: 0;
     text-align: left;
