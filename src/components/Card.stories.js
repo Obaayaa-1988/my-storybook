@@ -6,15 +6,15 @@ export default {
 }
 
 const Template = (args) => ({
-    components:{Card},
+    components:{ Card },
     setup(){
         return { args };
     }, 
 
-    template: '<Card v-binv="args"/>'
+    template: '<Card v-bind="args"/>'
 });
 
-export const FitstStory = Template.bind({});
+export const FirstStory = Template.bind({});
 
 FirstStory.args = {
     title: "Primary",
