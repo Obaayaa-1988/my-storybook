@@ -1,23 +1,38 @@
-import Card from './Card.vue'
+import Card from "./Card.vue";
 
 export default {
-    title: 'Card',
-    component: Card,
-}
+  title: "Card",
+  component: Card,
+};
 
 const Template = (args) => ({
-    components:{ Card },
-    setup(){
-        return { args };
-    }, 
+  components: { Card },
+  setup() {
+    return { args };
+  },
 
-    template: '<Card v-bind="args"/>'
+  template: '<Card v-bind="args"/>',
 });
 
 export const FirstStory = Template.bind({});
 
 FirstStory.args = {
-    title: "Primary",
-    subText: 'Example sub text'
+  title: "Primary",
+  subText: "Example sub text",
+  backgroundColor: "bg-red-800",
+};
+export const SecondStory = Template.bind({});
 
+SecondStory.args = {
+  title: "Hello Card",
+  subText: "Example second text",
+  // backgroundColor: "blue"
+};
+
+export const ThirdStory = Template.bind({});
+
+ThirdStory.args = {
+  title: "Coming from here",
+  subText: "Hello World",
+  backgroundColor: "bg-blue-600",
 };
