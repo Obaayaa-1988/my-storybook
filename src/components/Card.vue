@@ -19,11 +19,4 @@ export default {
 </script>
 
 <style scoped>
-/* .card{
-    background-color: hotpink;
-    border-radius: .2rem;
-    box-shadow: rgb(150, 150, 150) 0px 1px 3px;
-    width: 350px;
-    padding: .8rem;
-} */
 </style>
