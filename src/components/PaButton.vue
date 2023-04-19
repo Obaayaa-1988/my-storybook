@@ -1,19 +1,77 @@
 <template>
-    <div class=" rounded-md w-96 p-4 shadow-inner" :class="backgroundColor">
-        <h4 class="text-4xl">{{ title }}</h4>
-        <p class="secondary">{{ subText }}</p>
+    <button type="button" class="w-[150px] h-[50px] shadow-inner" @click="onClick" :style="style" :class="classes">
+        {{ title }}
 
-    </div>
+    </button>
 </template>
 
 <script>
+import { reactive, computed } from 'vue';
+
 export default {
-    name: 'Card',
+    name: 'PaButton',
     props: {
-        title: String,
-        subText: String,
-        backgroundColor: String
+        title:{
+            type:  String,
+            required: true,
+        },
+
+        primary: {
+            type: String,
+            default: false,
+
+        },
+
+         rounded: {
+            type: Boolean,
+            default: false,
+        },
+
+        size: {
+            type: String,
+            validator: function(value) {
+                return['small', 'medium', 'large'].indexOf(value) !== -1;
+            },
+            
+        },
+
+        backgroundColor: {
+            type: String,
+            default: '#efcccf',
+
+        }
+            
+       
+    },
+
+    emits: ['click'],
+
+    setup(props, { emit }) {
+        props = reactive(props);
+        return{
+            classes: computed(() => ({
+                primary: props.primary,
+                size: props.size
+            })),
+            style: computed(() => ({
+                backgroundColor: props.backgroundColor,
+                rounded: props.rounded ? 'rounded-md' : 'rounded-none',
+
+            })),
+
+
+            onClick(){
+                emit("clicked")
+            }
+
+           
+
+
+        }
     }
+
+
+
 
 }
 </script>
