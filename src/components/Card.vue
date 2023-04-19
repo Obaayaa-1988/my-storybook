@@ -1,7 +1,7 @@
 <template>
   <div class=" rounded-md w-96 p-4 shadow-inner" :class="backgroundColor">
-    <h4 class="text-4xl">{{ title }}</h4>
-    <p class="secondary">{{ subText }}</p>
+    <h4 class="text-4xl text-white">{{ title }}</h4>
+    <p class="secondary text-white mt-4">{{ subText }}</p>
 
   </div>
 </template>
