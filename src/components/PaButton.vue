@@ -1,0 +1,21 @@
+<template>
+    <div class=" rounded-md w-96 p-4 shadow-inner" :class="backgroundColor">
+        <h4 class="text-4xl">{{ title }}</h4>
+        <p class="secondary">{{ subText }}</p>
+
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'Card',
+    props: {
+        title: String,
+        subText: String,
+        backgroundColor: String
+    }
+
+}
+</script>
+
+<style scoped></style>
