@@ -1,74 +1,61 @@
 <template>
-    <button type="button" class="w-[150px] h-[50px] shadow-inner" @click="onClick" :style="style" :class="classes">
+    <button type="button" @click="onClick" :style="style" :class="classes">
         {{ title }}
 
     </button>
 </template>
 
 <script>
+import '../stories/button.css';
 import { reactive, computed } from 'vue';
 
 export default {
     name: 'PaButton',
     props: {
-        title:{
-            type:  String,
+        title: {
+            type: String,
             required: true,
         },
-
         primary: {
-            type: String,
-            default: false,
-
-        },
-
-         rounded: {
             type: Boolean,
             default: false,
         },
 
+         borderRadius: {
+                    type: Boolean,
+                    default: false,
+                 },
         size: {
             type: String,
-            validator: function(value) {
-                return['small', 'medium', 'large'].indexOf(value) !== -1;
+            validator: function (value) {
+                return ['small', 'medium', 'large'].indexOf(value) !== -1;
             },
-            
         },
-
         backgroundColor: {
             type: String,
-            default: '#efcccf',
-
-        }
-            
-       
+        },
     },
-
+   
     emits: ['click'],
 
     setup(props, { emit }) {
         props = reactive(props);
-        return{
+        return {
             classes: computed(() => ({
-                primary: props.primary,
-                size: props.size
+                'storybook-button': true,
+                'storybook-button--primary': props.primary,
+                'storybook-button--secondary': !props.primary,
+                [`storybook-button--${props.size || 'medium'}`]: true,
             })),
             style: computed(() => ({
                 backgroundColor: props.backgroundColor,
-                rounded: props.rounded ? 'rounded-md' : 'rounded-none',
-
+                borderRadius: props.borderRadius ? '10px' : '0px',
             })),
-
-
-            onClick(){
-                emit("clicked")
-            }
-
-           
-
-
-        }
-    }
+            onClick() {
+                emit('click');
+            },
+        };
+    },
 
 
 
@@ -76,4 +63,5 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
