@@ -19,7 +19,7 @@ export const FirstStory = Template.bind({});
 FirstStory.args = {
   title: "Primary",
   subText: "Example sub text",
-  backgroundColor: "bg-red-800",
+  backgroundColor: "bg-black",
 };
 export const SecondStory = Template.bind({});
 
