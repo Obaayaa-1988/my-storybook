@@ -6,12 +6,12 @@ export default {
 };
 
 const Template = (args) => ({
-  components: { Card },
+  components: { PaHeader },
   setup() {
     return { args };
   },
 
-  template: '<Card v-bind="args"/>',
+  template: '<PaHeader v-bind="args"/>',
 });
 
 export const FirstStory = Template.bind({});
