@@ -1,8 +1,13 @@
 <template>
-    <div class=" rounded-md w-96 p-4 shadow-inner" :class="backgroundColor">
-        <h4 class="text-4xl text-white">{{ title }}</h4>
-        <p class="secondary text-white mt-4">{{ subText }}</p>
-
+    <div class=" rounded-md w-[90%] p-4 shadow-inner" :class="backgroundColor">
+        <nav class="flex justify-between">
+            <div class="text-white font-mono text-2xl py-2 ">Logo</div>
+            <ul class="text-white font-mono flex justify-between">
+                <li class="pr-8">Home</li>
+                <li class="pr-8">About</li>
+                <li class="pr-8">Contact</li>
+            </ul>
+        </nav>
     </div>
 </template>
 
