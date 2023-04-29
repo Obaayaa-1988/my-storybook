@@ -3,9 +3,9 @@
         <nav class="flex justify-between">
             <div class="text-white font-mono text-2xl py-4 cursor-pointer">Logo</div>
             <ul class="text-white  font-semibold py-4 flex justify-between text-[18px] cursor-pointer">
-                <li class="pr-8  ">Home</li>
-                <li class="pr-8">About</li>
-                <li class="pr-8">Contact</li>
+                <li class="pr-8  ">{{ link }}</li>
+                <li class="pr-8">{{ linkOne   }}</li>
+                <li class="pr-8">{{ linkTWo }}</li>
             </ul>
             <div class="flex justify-between my-4 cursor-pointer"> 
                 <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6 mr-4 fill-white"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"/></svg></div>
@@ -21,8 +21,9 @@
 export default {
     name: 'PaHeader',
     props: {
-        title: String,
-        subText: String,
+        link: String, 
+        linkOne: String, 
+        linkTWo: String, 
         backgroundColor: String
     }
 
