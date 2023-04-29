@@ -24,15 +24,11 @@ FirstStory.args = {
 export const SecondStory = Template.bind({});
 
 SecondStory.args = {
-  title: "Hello Card",
-  subText: "Example second text",
   backgroundColor: "bg-pink-400",
 };
 
 export const ThirdStory = Template.bind({});
 
 ThirdStory.args = {
-  title: "Coming from here",
-  subText: "Hello World",
   backgroundColor: "bg-blue-600",
 };
